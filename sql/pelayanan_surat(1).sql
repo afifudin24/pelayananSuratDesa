@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.1deb1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jun 21, 2022 at 05:51 PM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.12
+-- Host: localhost:3306
+-- Generation Time: May 20, 2025 at 05:07 AM
+-- Server version: 10.11.11-MariaDB-0+deb12u1
+-- PHP Version: 8.2.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `pelayanansurat`
+-- Database: `pelayanan_surat`
 --
 
 -- --------------------------------------------------------
@@ -36,15 +36,35 @@ CREATE TABLE `administrator` (
   `password` varchar(225) NOT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `administrator`
 --
 
 INSERT INTO `administrator` (`id`, `nama`, `email`, `jekel`, `role_id`, `password`, `created_at`, `updated_at`) VALUES
-(1, 'Administrator', 'admin@gmail.com', 'Laki-laki', 1, '$2y$10$zedAdfe5XgVeOX1MyqCK5uxwdlbZeI/jAh92IKfz/92IM7ROfTIuu', '2022-03-17 13:47:13', '0000-00-00 00:00:00'),
+(1, 'Administrator', 'admin@gmail.com', 'Laki-laki', 1, '$2y$10$YFGq9aIARe0cg.WsmjDr9eCv9n2vsrSDO3zHNesPAzT7tXudNhmYG', '2022-03-17 13:47:13', '0000-00-00 00:00:00'),
 (2, 'Kepala Desa', 'kades@gmail.com', 'Laki-laki', 2, '$2y$10$Q93HdyfptAa5TQPWEd/BJewVoUu0k4Rlo9ke2taQU73vXxSwsJQ7q', '2022-03-17 13:47:51', '2022-03-31 17:56:46');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `signature_surat`
+--
+
+CREATE TABLE `signature_surat` (
+  `id` int(11) NOT NULL,
+  `namaLurah` varchar(255) NOT NULL,
+  `pathSignature` varchar(255) NOT NULL,
+  `pathStempel` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `signature_surat`
+--
+
+INSERT INTO `signature_surat` (`id`, `namaLurah`, `pathSignature`, `pathStempel`) VALUES
+(1, 'Sartim', 'assets/signatures/6819514011056.png', 'assets/stamples/681958cc71555.jpeg');
 
 -- --------------------------------------------------------
 
@@ -67,7 +87,7 @@ CREATE TABLE `surat_domisili` (
   `notifikasi` int(11) NOT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `surat_domisili`
@@ -109,7 +129,7 @@ CREATE TABLE `surat_kelahiran` (
   `notifikasi` int(2) DEFAULT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `surat_kelahiran`
@@ -157,7 +177,7 @@ CREATE TABLE `surat_kematian` (
   `notifikasi` int(2) NOT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `surat_kematian`
@@ -166,6 +186,33 @@ CREATE TABLE `surat_kematian` (
 INSERT INTO `surat_kematian` (`id`, `id_warga`, `jenis_surat`, `nomor_surat`, `tanggal_surat`, `tanggal_kadaluarsa`, `hubungan`, `nama_alm`, `bin`, `nik_a`, `jekel_a`, `tempat_lahir_a`, `tanggal_lahir_a`, `kewarganegaraan_a`, `status_perkawinan_a`, `pekerjaan_a`, `alamat_a`, `file_kk`, `file_ktp`, `hari`, `tanggal_meninggal`, `jam_meninggal`, `tempat_meninggal`, `sebab_meninggal`, `tempat_pemakaman`, `keperluan`, `status`, `komentar`, `notifikasi`, `created_at`, `updated_at`) VALUES
 (1, 1, 'SURAT KETERANGAN KEMATIAN', '001/SKK/04/2022', '11/04/2022', '11/05/2022', 'Keponakan', 'mujnah', 'somat', '030302939392923', 'Laki - Laki', 'Jepara', '1998-02-11', 'WNI', 'Janda', 'Mantan TK', 'Jepara Desa Brantaksekarjati', 'skk-id-1-tgl20220411-2410-42.jpeg', 'skk-id-1-tgl20220411-2410-290.jpeg', 'Senin', '2022-04-11', '09:00', 'RSUD Kartini Jepara', 'Sakit Keras', 'TPU Desa Setempat', 'Untuk Keterangan', 'Diterima', NULL, 0, '2022-04-11 06:24:10', '0000-00-00 00:00:00'),
 (2, 1, 'SURAT KETERANGAN KEMATIAN', '002/SKK/06/2022', '21/06/2022', '21/07/2022', 'sadsadsad', 'asdsad', 'asdsad', '1111111111111111', 'Laki - Laki', 'asdas', '2022-06-15', 'WNI', 'Kawin', 'asdasds', 'asdasdasd', 'skk-id-1-tgl20220621-4958-669.jpeg', 'skk-id-1-tgl20220621-4958-85.jpg', 'Selasa', '2022-06-14', '22:51', 'dasdasd', 'dasasd', 'TPU Desa', 'sadasdsadasd', 'Menunggu Verifikasi', NULL, 0, '2022-06-21 17:49:58', '0000-00-00 00:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `surat_keramaian`
+--
+
+CREATE TABLE `surat_keramaian` (
+  `id` int(11) NOT NULL,
+  `id_warga` int(11) NOT NULL,
+  `jenis_surat` varchar(50) NOT NULL,
+  `nomor_surat` varchar(50) NOT NULL,
+  `tanggal_surat` varchar(25) NOT NULL,
+  `tanggal_kadaluarsa` varchar(25) NOT NULL,
+  `jenis_acara` text NOT NULL,
+  `tanggal_acara` date NOT NULL,
+  `waktu_mulai` time NOT NULL,
+  `waktu_selesai` time NOT NULL,
+  `kuantitas` int(20) NOT NULL,
+  `menutup_jalan` tinyint(1) NOT NULL,
+  `file_ktp` varchar(225) NOT NULL,
+  `status` varchar(20) NOT NULL,
+  `notifikasi` int(2) NOT NULL,
+  `komentar` text NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `updated_at` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -188,7 +235,7 @@ CREATE TABLE `surat_keterangan_pengantar` (
   `notifikasi` int(2) NOT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `surat_keterangan_pengantar`
@@ -221,7 +268,7 @@ CREATE TABLE `surat_tidak_mampu` (
   `komentar` text NOT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `surat_tidak_mampu`
@@ -259,7 +306,7 @@ CREATE TABLE `surat_usaha` (
   `notifikasi` varchar(2) DEFAULT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='f';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='f';
 
 --
 -- Dumping data for table `surat_usaha`
@@ -283,14 +330,14 @@ CREATE TABLE `users` (
   `role_id` int(2) NOT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id_users`, `id_warga`, `email`, `password`, `role_id`, `created_at`, `updated_at`) VALUES
-(1, 1, 'warga@gmail.com', '$2y$10$jhMdmG3aC8PFcYcY00ikPOzUNowUHPYoZ/yQi0dird.Oe5Pz6KklK', 3, '2022-04-11 05:55:19', '0000-00-00 00:00:00'),
+(1, 1, 'admin@gmail.com', '$2y$10$GHHpSe6ckLbTRSpSFlIIBeRgBc4ACtaZMhjal0YFnHHburJJvZS7S', 1, '2022-04-11 05:55:19', '0000-00-00 00:00:00'),
 (2, 2, 'warga2@gmail.com', '$2y$10$cHPfa5PJhazV7JZWLDandO25LbX9TIxBpGC40JblWW.CsV2UCw1Bu', 3, '2022-06-19 00:33:35', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
@@ -316,7 +363,7 @@ CREATE TABLE `warga` (
   `alamat` text NOT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `warga`
@@ -334,6 +381,12 @@ INSERT INTO `warga` (`id_warga`, `nik`, `nama`, `jekel`, `agama`, `golongan_dara
 -- Indexes for table `administrator`
 --
 ALTER TABLE `administrator`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `signature_surat`
+--
+ALTER TABLE `signature_surat`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -356,6 +409,13 @@ ALTER TABLE `surat_kelahiran`
 ALTER TABLE `surat_kematian`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_warga` (`id_warga`);
+
+--
+-- Indexes for table `surat_keramaian`
+--
+ALTER TABLE `surat_keramaian`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `wr` (`id_warga`);
 
 --
 -- Indexes for table `surat_keterangan_pengantar`
@@ -402,6 +462,12 @@ ALTER TABLE `administrator`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `signature_surat`
+--
+ALTER TABLE `signature_surat`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `surat_domisili`
 --
 ALTER TABLE `surat_domisili`
@@ -418,6 +484,12 @@ ALTER TABLE `surat_kelahiran`
 --
 ALTER TABLE `surat_kematian`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `surat_keramaian`
+--
+ALTER TABLE `surat_keramaian`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `surat_keterangan_pengantar`

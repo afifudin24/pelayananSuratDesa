@@ -140,7 +140,7 @@ class Skk extends CI_Controller
 				$nomor  = sprintf("%03s", abs(floatval($noid['id']) + 1)) . '/' . 'SKK' . '/' . date('m') . '/' . date('Y');
 				$data = array(
 					'id_warga'  => $this->session->userdata('id_warga'),
-					'jenis_surat'   => 'SURAT KETERANGAN KEMATIAN',
+					'jenis_surat'   => 'SURAT KEMATIAN',
 					'nomor_surat'   => $nomor,
 					'tanggal_surat' => date('d/m/Y'),
 					'tanggal_kadaluarsa'  => date('d/m/Y', strtotime('+1 month')),

@@ -12,7 +12,7 @@ class Skd extends CI_Controller
 	public function index()
 	{
 		$data = array(
-			'title' => 'Surat Keterangan Domisili',
+			'title' => 'Surat Domisili',
 			'data'  => $this->M_getData->getDataId()
 		);
 

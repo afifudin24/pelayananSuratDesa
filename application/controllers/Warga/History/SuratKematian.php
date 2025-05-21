@@ -29,11 +29,13 @@ class SuratKematian extends CI_Controller
     public function cetak($id)
     {
         $data = array(
-            'title' => 'Cetak Surat Keterangan Kematian',
+            'title' => 'Cetak Surat Kematian',
             'data' => $this->M_cetak->cetakSkk($id),
             'signature' => $this->M_signature->get()
         );
+          $qrPath = 'uploads/qrcode/skk/qr_surat_' . $id . '.png';
 
+         $data['qr_image'] = base_url($qrPath); // QR path untuk ditampilkan di view
         $html = $this->load->view('warga/history/skk/print.php', $data, true);
         $options = new Options();
         $options->set('isHtml5ParserEnabled', true);

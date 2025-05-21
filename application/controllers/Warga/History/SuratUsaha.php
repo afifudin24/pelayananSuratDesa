@@ -33,7 +33,9 @@ class SuratUsaha extends CI_Controller
             'data' => $this->M_cetak->cetakSku($id),
             'signature' => $this->M_signature->get()
         );
+         $qrPath = 'uploads/qrcode/sku/qr_surat_' . $id . '.png';
 
+         $data['qr_image'] = base_url($qrPath); // QR path untuk ditampilkan di view
         $html = $this->load->view('warga/history/sku/print', $data, true);
         $options = new Options();
         $options->set('isHtml5ParserEnabled', true);

@@ -1,6 +1,6 @@
 <div class="container">
 	<div class="row">
-		<div class="col-md-6 col-sm-12 mx-auto">
+		<div class="col-md-8 col-sm-12 mx-auto">
 			<div class="card pt-2">
 				<div class="card-body">
 					<div class="text-center mb-2">
@@ -12,15 +12,19 @@
 					<h5 class="font-bold text-center mt-4">Silahkan Login</h5>
 					<div class="card mt-3">
 						<div class="card-body">
-							<div class="container px-lg-12">
+							<div class="container ">
 								<div class="row d-flex justify-content-center align-items-center">
-									<div class="col-5">
-										<a class="btn btn-success btn-sm font-bold text-dark"
-											href="<?= base_url('user/login') ?>">Login Warga</a>
+									<div class="col-4 text-center">
+										<a class="btn w-full block btn-success btn-sm font-bold text-dark"
+											href="<?= base_url('user/login') ?>">Warga</a>
 									</div>
-									<div class="col-5">
+									<div class="col-4 text-center">
 										<a class="btn btn-warning btn-sm font-bold text-dark"
-											href=" <?= base_url('administrator/login') ?>">Login Administrator</a>
+											href=" <?= base_url('administrator/login') ?>">Kasi Pelayanan</a>
+									</div>
+									<div class="col-4 text-center">
+										<a class="btn btn-warning btn-sm font-bold text-dark"
+											href=" <?= base_url('administrator/login') ?>">Kepala Desa</a>
 									</div>
 								</div>
 							</div>

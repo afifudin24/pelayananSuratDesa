@@ -24,19 +24,19 @@ class Warga extends CI_Controller
 
 	public function loginUser()
 	{
-		$this->form_validation->set_rules('email', 'Alamat Email', 'required|valid_email');
-		$this->form_validation->set_rules('password', 'Password', 'required');
+		$this->form_validation->set_rules('nik', 'NIK', 'required');
+		$this->form_validation->set_rules('nokk', 'No KK', 'required');
 
-		$email = $this->input->post('email');
-		$password = $this->input->post('password');
+		$email = $this->input->post('nik');
+		$password = $this->input->post('nokk');
 
 		if ($this->form_validation->run() == FALSE) {
 			$this->session->set_flashdata('error', 'Oppss... Terdapat kesalahan !');
 			$this->index();
 		} else {
 			$userLogin = $this->M_auth->loginUser($email);
-			if (!empty($userLogin['email'])) {
-				if (password_verify($password, $userLogin['password'])) {
+			if (!empty($userLogin['nik'])) {
+				if (password_verify($password, $userLogin['nokk'])) {
 					$userLogin = array(
 						'id_user'   => $userLogin['id_users'],
 						'id_warga'  => $userLogin['id_warga'],
@@ -50,11 +50,11 @@ class Warga extends CI_Controller
 					$this->session->set_flashdata('success', 'Login berhasil !');
 					redirect('dashboard', 'refresh');
 				} else {
-					$this->session->set_flashdata('danger', 'Oppss... Password anda salah !');
+					$this->session->set_flashdata('danger', 'Oppss... No KK anda salah !');
 					redirect('user/login', 'refresh');
 				}
 			} else {
-				$this->session->set_flashdata('error', 'Oppss... Email anda tidak terdaftar atau salah !  !');
+				$this->session->set_flashdata('error', 'Oppss... Anda tidak terdaftar atau salah !  !');
 				redirect('user/login', 'refresh');
 			}
 		}

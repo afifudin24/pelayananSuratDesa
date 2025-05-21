@@ -16,7 +16,7 @@ class SuratKelahiran extends CI_Controller
     public function index()
     {
         $data = array(
-            'title' => 'History Surat Pengantar Akte Kelahiran',
+            'title' => 'History Surat Kelahiran',
             'datas' => $this->M_history->getSpak(),
         );
 
@@ -30,11 +30,13 @@ class SuratKelahiran extends CI_Controller
     public function cetak($id)
     {
         $data = array(
-            'title' => 'Cetak Surat Pengantar Akte Kelahiran',
+            'title' => 'Cetak Surat Kelahiran',
             'data' => $this->M_cetak->cetakSpak($id),
             'signature' => $this->M_signature->get()
         );
+        $qrPath = 'uploads/qrcode/spak/qr_surat_' . $id . '.png';
 
+         $data['qr_image'] = base_url($qrPath); // QR path untuk ditampilkan di view
         $html = $this->load->view('warga/history/spak/print', $data, true);
         // / Konfigurasi Dompdf
         $options = new Options();

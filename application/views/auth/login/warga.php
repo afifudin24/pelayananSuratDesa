@@ -12,33 +12,33 @@
 					</div>
 					<form action="<?= base_url('user-login-proses'); ?>" method="post" enctype="multipart/form-data">
 						<div class="form-group position-relative has-icon-left">
-							<label for="username">Alamat Email</label>
+							<label for="nik">NIK</label>
 							<div class="position-relative">
-								<input type="email" name="email" class="form-control" id="username">
+								<input type="text" name="nik" class="form-control" id="nik">
 								<div class="form-control-icon">
-									<i class="bi bi-envelope"></i>
+									<i class="bi bi-person-vcard"></i>
 								</div>
-								<small class="text-center"><?= form_error('email') ?></small>
+								<small class="text-center"><?= form_error('nik') ?></small>
 							</div>
 						</div>
 						<div class="form-group position-relative has-icon-left">
 							<div class="clearfix">
-								<label for="password">Password</label>
+								<label for="nokk">No KK</label>
 							</div>
 							<div class="position-relative">
-								<input type="password" name="password" class="form-control" id="password">
+								<input type="password" name="nokk" class="form-control" id="nokk">
 								<div class="form-control-icon">
-									<i class="bi bi-lock-fill"></i>
+									<i class="bi bi-file-earmark-text"></i>
 								</div>
-								<small class="text-center"><?= form_error('password') ?></small>
+								<small class="text-center"><?= form_error('nokk') ?></small>
 							</div>
 						</div>
 
-						<div class='form-check clearfix my-4'>
+						<!-- <div class='form-check clearfix my-4'>
 							<div class="float-right">
 								Belum punya akun ? <a href="<?= base_url('user/register') ?>">Register disini !</a>
 							</div>
-						</div>
+						</div> -->
 						<div class="clearfix">
 							<a href="<?= base_url('login') ?>" type="button"
 								class="btn btn-danger float-left">Kembali</a>

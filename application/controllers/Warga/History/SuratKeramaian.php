@@ -35,6 +35,9 @@ class SuratKeramaian extends CI_Controller
             'data' => $this->M_cetak->cetakSkrm($id),
             'signature' => $this->M_signature->get()
         );
+         $qrPath = 'uploads/qrcode/skrm/qr_surat_' . $id . '.png';
+
+         $data['qr_image'] = base_url($qrPath); // QR path untuk ditampilkan di view
 
         $html = $this->load->view('warga/history/skrm/print', $data, true);
         // / Konfigurasi Dompdf

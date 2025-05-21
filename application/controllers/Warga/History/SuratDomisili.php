@@ -29,13 +29,16 @@ class SuratDomisili extends CI_Controller
     public function cetak($id)
     {
         $data = array(
-            'title' => 'Cetak Keterangan Surat Domisili',
+            'title' => 'Cetak Surat Domisili',
             'data' => $this->M_cetak->cetakSkd($id),
             'signature' => $this->M_signature->get()
         );
 
         // $this->load->view('warga/history/skd/print', $data);
         // Load view sebagai HTML string
+          $qrPath = 'uploads/qrcode/skd/qr_surat_' . $id . '.png';
+
+         $data['qr_image'] = base_url($qrPath); // QR path untuk ditampilkan di view
         $html = $this->load->view('warga/history/skd/print', $data, true);
 
         // Konfigurasi Dompdf

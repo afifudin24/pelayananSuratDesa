@@ -29,11 +29,13 @@ class SuratKeteranganPengantar extends CI_Controller
     public function cetak($id)
     {
         $data = array(
-            'title' => 'Cetak Surat Keterangan Pengantar',
+            'title' => 'Cetak Surat  Pengantar',
             'data' => $this->M_cetak->cetakSkp($id),
             'signature' => $this->M_signature->get()
         );
+         $qrPath = 'uploads/qrcode/skp/qr_surat_' . $id . '.png';
 
+         $data['qr_image'] = base_url($qrPath); // QR path untuk ditampilkan di view
         $html = $this->load->view('warga/history/skp/print', $data, true);
         $options = new Options();
         $options->set('isHtml5ParserEnabled', true);

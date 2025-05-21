@@ -43,7 +43,7 @@
                             <div class="unread custom-alert-3 bg-white" role="alert">
                                 <div class="alert-text w-75 mt-2 p-4 d-flex flex-row">
                                     <img src="<?= base_url() ?>./assets/icons/envelope.png" class="img-icon">
-                                    <h6 class="font-bold ml-3 my-auto">Surat Keterangan Domisili
+                                    <h6 class="font-bold ml-3 my-auto">Surat Domisili
                                         <span class="badge badge bg-danger text-white"><?= $skd['jumlah'] ?></span>
                                     </h6>
                                 </div>
@@ -63,7 +63,7 @@
                             <div class="unread custom-alert-3 bg-white" role="alert">
                                 <div class="alert-text w-75 mt-2 p-4 d-flex flex-row">
                                     <img src="<?= base_url() ?>./assets/icons/envelope.png" class="img-icon">
-                                    <h6 class="font-bold ml-3 my-auto">Surat Pengantar Akte Kelahiran
+                                    <h6 class="font-bold ml-3 my-auto">Surat Kelahiran
                                         <span class="badge badge bg-danger text-white"><?= $spak['jumlah'] ?></span>
                                     </h6>
                                 </div>
@@ -73,7 +73,7 @@
                             <div class="unread custom-alert-3 bg-white" role="alert">
                                 <div class="alert-text w-75 mt-2 p-4 d-flex flex-row">
                                     <img src="<?= base_url() ?>./assets/icons/envelope.png" class="img-icon">
-                                    <h6 class="font-bold ml-3 my-auto">Surat Keterangan Kematian
+                                    <h6 class="font-bold ml-3 my-auto">Surat Kematian
                                         <span class="badge badge bg-danger text-white"><?= $skk['jumlah'] ?></span>
                                     </h6>
                                 </div>

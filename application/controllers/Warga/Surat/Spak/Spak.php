@@ -41,9 +41,7 @@ class Spak extends CI_Controller
 		$this->form_validation->set_rules('tempat_lahir_b', 'Tempat Lahir', 'required', [
 			'required' => 'Tempat Lahir harus diisi!'
 		]);
-		$this->form_validation->set_rules('tanggal_lahir_b', 'Tanggal Lahir', 'required', [
-			'required' => 'Tanggal Lahir harus diisi!'
-		]);
+		
 		$this->form_validation->set_rules('jekel_b', 'Jenis Kelamin', 'required', [
 			'required' => 'Jenis Kelamin harus diisi!'
 		]);
@@ -62,7 +60,7 @@ class Spak extends CI_Controller
 		$this->form_validation->set_rules('keperluan', 'Keperluan', 'required', array('required' => 'Keperluan permohonan harus diisi !'));
 
 		$cek = $this->M_surat->cek_spak();
-
+		
 		if ($this->form_validation->run() == FALSE) {
 
 			$this->session->set_flashdata('error', 'Data tidak lengkap !');
@@ -115,7 +113,7 @@ class Spak extends CI_Controller
 					$nomor  = sprintf("%03s", abs(floatval($noid['id']) + 1)) . '/' . 'SKPAK' . '/' . date('m') . '/' . date('Y');
 					$data = array(
 						'id_warga'  => $this->session->userdata('id_warga'),
-						'jenis_surat'   => 'SURAT PENGANTAR AKTE KELAHIRAN',
+						'jenis_surat'   => 'SURAT KELAHIRAN',
 						'nomor_surat'   => $nomor,
 						'tanggal_surat' => date('d/m/Y'),
 						'tanggal_kadaluarsa'  => date('d/m/Y', strtotime('+1 month')),

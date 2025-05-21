@@ -183,24 +183,32 @@ function formatTanggal($tanggal)
                 </p>
                 <br>
                 <div class=" float-end">
-                    <div class="col-8 float-end" style="padding:0 !important; margin:0; >
-                        <span class=" mb-n2">Tunjung, <?= formatTanggal(date('d M Y')) ?></span>
+                     <div class="col-12 text-center" style="padding:0 !important; margin:0;">
+                        <span class="mb-2">Tunjung, <?= formatTanggal(date('d M Y')) ?></span>
                         <p>KEPALA DESA TUNJUNG</p>
 
-                        <div class="mx-auto" style="position: relative; padding: 0; margin: 0;" class='col-10'>
-                            <img src="<?= base_url($signature['pathSignature']) ?>" class="" style=" style="
+                        <div class="mx-auto" class='col-12 text-center'>
+                            <!-- <img src="<?= base_url($signature['pathSignature']) ?>" class="" style=" style="
                                 text-align:center; filter: contrast(150%); display: block; margin: 0 auto; z-index: 1;
                                 height: auto;" width="200">
                             <img src="<?= base_url($signature['pathStempel']) ?>" width="150" class="" style="opacity: 0.8; position: absolute; top: -10%; left: -30%;  margin-top:
-                                -5px; z-index: 2; height: auto;">
+                                -5px; z-index: 2; height: auto;"> -->
+                                 <img src="<?= $qr_image ?>" width="100">
                             <p class="fw-bold"
-                                style="text-align:center; margin-top: -5px; z-index:2; text-transform: uppercase;">
+                                style="text-align:center; margin-top: 5px; z-index:2; text-transform: uppercase;">
                                 <?= $signature['namaLurah'] ?>
                             </p>
                         </div>
 
+                        <div>
+
+                     
+                            
+                        </div>
+
 
                     </div>
+                </div>
                 </div>
             </div>
         </div>

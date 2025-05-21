@@ -7,9 +7,10 @@ class M_auth extends CI_Model
         return $this->db->get('administrator')->row_array();
     }
 
-    public function loginUser($email)
+
+    public function loginUser($nik)
     {
-        $this->db->where('users.email', $email);
+        $this->db->where('users.nik', $nik);
         $this->db->join('warga', 'warga.id_warga=users.id_warga');
         return $this->db->get('users')->row_array();
     }

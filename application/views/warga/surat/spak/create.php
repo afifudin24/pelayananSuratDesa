@@ -1,6 +1,6 @@
             <div class="main-content container-fluid">
             	<div class="page-title">
-            		<h6><strong>Surat Pengantar Akte Kelahiran</strong></h6>
+            		<h6><strong>Surat Kelahiran</strong></h6>
             	</div>
             	<section class="section">
             		<div class="row">

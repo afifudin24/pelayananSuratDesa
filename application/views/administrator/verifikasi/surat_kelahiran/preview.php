@@ -1,6 +1,6 @@
             <div class="main-content container-fluid">
                 <div class="page-title">
-                    <h4>Priview Surat Surat Pengantar Akte Kelahiran</h4>
+                    <h4>Priview Surat Surat Kelahiran</h4>
                 </div>
                 <a href="<?= base_url('verifikasi-surat-kelahiran') ?>" class="btn btn-primary btn-sm mb-2"><i class="bi bi-arrow-left-circle-fill"></i> Kembali</a>
                 <section class="section">

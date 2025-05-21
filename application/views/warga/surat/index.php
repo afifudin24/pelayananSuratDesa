@@ -47,7 +47,7 @@
                             <div class="unread custom-alert-3 bg-white" role="alert">
                                 <div class="alert-text w-75 mt-2 p-4 d-flex flex-row">
                                     <img src="<?= base_url() ?>./assets/icons/envelope.png" class="img-icon">
-                                    <h6 class="font-bold ml-3 my-auto">Surat Keterangan Pengantar</h6>
+                                    <h6 class="font-bold ml-3 my-auto">Surat Pengantar</h6>
                                 </div>
                             </div>
                         </a>
@@ -55,7 +55,7 @@
                             <div class="unread custom-alert-3 bg-white" role="alert">
                                 <div class="alert-text w-75 mt-2 p-4 d-flex flex-row">
                                     <img src="<?= base_url() ?>./assets/icons/envelope.png" class="img-icon">
-                                    <h6 class="font-bold ml-3 my-auto">Surat Pengantar Akte Kelahiran</h6>
+                                    <h6 class="font-bold ml-3 my-auto">Surat Kelahiran</h6>
                                 </div>
                             </div>
                         </a>
@@ -63,7 +63,7 @@
                             <div class="unread custom-alert-3 bg-white" role="alert">
                                 <div class="alert-text w-75 mt-2 p-4 d-flex flex-row">
                                     <img src="<?= base_url() ?>./assets/icons/envelope.png" class="img-icon">
-                                    <h6 class="font-bold ml-3 my-auto">Surat Keterangan Kematian</h6>
+                                    <h6 class="font-bold ml-3 my-auto">Surat Kematian</h6>
                                 </div>
                             </div>
                         </a>

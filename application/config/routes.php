@@ -95,42 +95,47 @@ $route['verifikasi-surat-domisili'] = 'Administrator/Verifikasi/SuratDomisili/in
 $route['update-status-skd'] = 'Administrator/Verifikasi/SuratDomisili/skdverif';
 $route['komentar-skd/(:any)'] = 'Administrator/Verifikasi/SuratDomisili/skdkomentar/$1';
 $route['preview-skd/(:any)'] = 'Administrator/Verifikasi/SuratDomisili/preview/$1';
-
+$route['verifikasi/skd/(:any)'] = 'Warga/Verifikasi/SuratDomisili/verifikasi/$1';
 //surat tidak mampu
 $route['verifikasi-surat-tidak-mampu'] = 'Administrator/Verifikasi/SuratTidakMampu/index';
 $route['update-status-sktm'] = 'Administrator/Verifikasi/SuratTidakMampu/sktmverif';
 $route['komentar-sktm/(:any)'] = 'Administrator/Verifikasi/SuratTidakMampu/sktmkomentar/$1';
 $route['preview-sktm/(:any)'] = 'Administrator/Verifikasi/SuratTidakMampu/preview/$1';
-
+$route['verifikasi/sktm/(:any)'] = 'Warga/Verifikasi/SuratTidakMampu/verifikasi/$1';
 //surat usaha
 $route['verifikasi-surat-usaha'] = 'Administrator/Verifikasi/SuratUsaha/index';
 $route['update-status-sku'] = 'Administrator/Verifikasi/SuratUsaha/skuverif';
 $route['komentar-sku/(:any)'] = 'Administrator/Verifikasi/SuratUsaha/skukomentar/$1';
 $route['preview-sku/(:any)'] = 'Administrator/Verifikasi/SuratUsaha/preview/$1';
+$route['verifikasi/sku/(:any)'] = 'Warga/Verifikasi/SuratUsaha/verifikasi/$1';
 
 //surat kelahiran
 $route['verifikasi-surat-kelahiran'] = 'Administrator/Verifikasi/SuratKelahiran/index';
 $route['update-status-spak'] = 'Administrator/Verifikasi/SuratKelahiran/spakverif';
 $route['komentar-spak/(:any)'] = 'Administrator/Verifikasi/SuratKelahiran/spakkomentar/$1';
 $route['preview-spak/(:any)'] = 'Administrator/Verifikasi/SuratKelahiran/preview/$1';
+$route['verifikasi/spak/(:any)'] = 'Warga/Verifikasi/SuratKelahiran/verifikasi/$1';
 
 //surat kematian
 $route['verifikasi-surat-kematian'] = 'Administrator/Verifikasi/SuratKematian/index';
 $route['update-status-skk'] = 'Administrator/Verifikasi/SuratKematian/skkverif';
 $route['komentar-skk/(:any)'] = 'Administrator/Verifikasi/SuratKematian/skkkomentar/$1';
 $route['preview-skk/(:any)'] = 'Administrator/Verifikasi/SuratKematian/preview/$1';
+$route['verifikasi/skk/(:any)'] = 'Warga/Verifikasi/SuratKematian/verifikasi/$1';
 
 //surat ket pernyataan
 $route['verifikasi-surat-keterangan-pengantar'] = 'Administrator/Verifikasi/SuratKeteranganPengantar/index';
 $route['update-status-skp'] = 'Administrator/Verifikasi/SuratKeteranganPengantar/skpverif';
 $route['komentar-skp/(:any)'] = 'Administrator/Verifikasi/SuratKeteranganPengantar/skpkomentar/$1';
 $route['preview-skp/(:any)'] = 'Administrator/Verifikasi/SuratKeteranganPengantar/preview/$1';
+$route['verifikasi/skp/(:any)'] = 'Warga/Verifikasi/SuratKeteranganPengantar/verifikasi/$1';
 
 // surat keramaian
 $route['verifikasi-surat-keramaian'] = 'Administrator/Verifikasi/SuratKeramaian/index';
 $route['update-status-skrm'] = 'Administrator/Verifikasi/SuratKeramaian/skrmverif';
 $route['komentar-skrm/(:any)'] = 'Administrator/Verifikasi/SuratKeramaian/skrmkomentar/$1';
 $route['preview-skrm/(:any)'] = 'Administrator/Verifikasi/SuratKeramaian/preview/$1';
+$route['verifikasi/skrm/(:any)'] = 'Warga/Verifikasi/SuratKeramaian/verifikasi/$1';
 
 // signature
 $route['signature'] = 'Administrator/Signature/Signature/index';

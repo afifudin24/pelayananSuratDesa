@@ -25,6 +25,17 @@ class SuratTidakMampu extends CI_Controller
         $this->load->view('warga/history/sktm/index', $data);
         $this->load->view('layout/footer', $data);
     }
+    public function listcetak()
+    {
+        $data = array(
+            'title' => 'Cetak Surat Kelahiran',
+            'datas' => $this->M_history->getlistcetaksktm()
+        );
+        $this->load->view('layout/header', $data);
+        $this->load->view('layout/sidebar', $data);
+        $this->load->view('warga/history/sktm/index', $data);
+        $this->load->view('layout/footer');
+    }
 
     public function cetak($id)
     {

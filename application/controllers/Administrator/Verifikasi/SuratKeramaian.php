@@ -6,6 +6,7 @@ class SuratKeramaian extends CI_Controller
 		parent::__construct();
 		$this->load->model('Administrator/M_verifikasi');
 		$this->load->model('Administrator/M_qr');
+		$this->load->model('M_cetak');
 	}
 
 
@@ -16,6 +17,18 @@ class SuratKeramaian extends CI_Controller
 			'datas' => $this->M_verifikasi->getSkrm()
 		);
 
+		$this->load->view('layout/header', $data);
+		$this->load->view('layout/sidebar', $data);
+		$this->load->view('administrator/verifikasi/skrm/surat_keramaian', $data);
+		$this->load->view('layout/footer');
+	}
+
+	public function listcetak(){
+
+		$data = array(
+			'title' => 'Cetak Surat Keramaian',
+			'datas' => $this->M_cetak->getcetakskrm()
+		);
 		$this->load->view('layout/header', $data);
 		$this->load->view('layout/sidebar', $data);
 		$this->load->view('administrator/verifikasi/skrm/surat_keramaian', $data);

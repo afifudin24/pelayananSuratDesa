@@ -7,6 +7,7 @@ class SuratKeteranganPengantar extends CI_Controller
 		is_login();
 		$this->load->model('Administrator/M_verifikasi');
 		$this->load->model('Administrator/M_qr');
+		$this->load->model('M_cetak');
 	}
 
 	public function index()
@@ -14,6 +15,20 @@ class SuratKeteranganPengantar extends CI_Controller
 		$data = array(
 			'title' => 'Verifikasi Surat Keterangan Pengantar',
 			'datas' => $this->M_verifikasi->getSkp(),
+		);
+
+		$this->load->view('layout/header', $data);
+		$this->load->view('layout/sidebar', $data);
+		$this->load->view('administrator/verifikasi/skp/keterangan_pengantar', $data);
+		$this->load->view('layout/footer');
+	}
+
+	public function listcetak()
+	{
+
+		$data = array(
+			'title' => 'Cetak Surat Keterangan Pengantar',
+			'datas' => $this->M_cetak->getcetakskp()
 		);
 
 		$this->load->view('layout/header', $data);

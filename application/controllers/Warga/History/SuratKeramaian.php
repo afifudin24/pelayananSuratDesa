@@ -27,6 +27,17 @@ class SuratKeramaian extends CI_Controller
         $this->load->view('warga/history/skrm/index', $data);
         $this->load->view('layout/footer', $data);
     }
+    public function listcetak()
+    {
+        $data = array(
+            'title' => 'Cetak Surat Kelahiran',
+            'datas' => $this->M_history->getlistcetakskrm()
+        );
+       $this->load->view('layout/header', $data);
+        $this->load->view('layout/sidebar', $data);
+        $this->load->view('warga/history/skrm/index', $data);
+        $this->load->view('layout/footer');
+    }
 
     public function cetak($id)
     {

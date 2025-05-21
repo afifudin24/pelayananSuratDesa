@@ -119,7 +119,7 @@
 						<div class="card">
 							<div class="card-body bg-success">
 								<h4 class="font-bold text-white">SELAMAT DATANG DI APLIKASI PELAYANAN SURAT</h4>
-								<h5 class="font-bold text-white">DESA BsRANTAKSEKARJATI - JEPARA</h5>
+								<h5 class="font-bold text-white">DESA TUNJUNG - JATILAWANG</h5>
 							</div>
 						</div>
 					</div>

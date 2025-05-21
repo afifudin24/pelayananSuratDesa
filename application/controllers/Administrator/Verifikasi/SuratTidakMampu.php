@@ -7,6 +7,8 @@ class SuratTidakMampu extends CI_Controller
 		is_login();
 		$this->load->model('Administrator/M_verifikasi');
 		$this->load->model('Administrator/M_qr');
+		// $this->load->model('Administrator/M_cetak');
+		$this->load->model('M_cetak');
 	}
 
 	public function index()
@@ -16,6 +18,18 @@ class SuratTidakMampu extends CI_Controller
 			'datas' => $this->M_verifikasi->getSktm(),
 		);
 
+		$this->load->view('layout/header', $data);
+		$this->load->view('layout/sidebar', $data);
+		$this->load->view('administrator/verifikasi/sktm/surat_tidak_mampu', $data);
+		$this->load->view('layout/footer');
+	}
+
+	public function listcetak(){
+
+		$data = array(
+			'title' => 'Cetak Surat Keterangan Tidak Mampu',
+			'datas' => $this->M_cetak->getcetaksktm()
+		);
 		$this->load->view('layout/header', $data);
 		$this->load->view('layout/sidebar', $data);
 		$this->load->view('administrator/verifikasi/sktm/surat_tidak_mampu', $data);

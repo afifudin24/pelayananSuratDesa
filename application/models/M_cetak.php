@@ -1,6 +1,34 @@
 <?php
 class M_cetak extends CI_Model
 {
+    public function getcetakskd(){
+        $this->db->where('status', 'Diterima');
+        return $this->db->get('surat_domisili')->result();
+    }
+    public function getcetaksku(){
+        $this->db->where('status', 'Diterima');
+        return $this->db->get('surat_usaha')->result();
+    }
+    public function getcetakskrm(){
+        $this->db->where('status', 'Diterima');
+        return $this->db->get('surat_keramaian')->result();
+    }
+    public function getcetakskk(){
+        $this->db->where('status', 'Diterima');
+        return $this->db->get('surat_kematian')->result();
+    }
+    public function getcetakspak(){
+        $this->db->where('status', 'Diterima');
+        return $this->db->get('surat_kelahiran')->result();
+    }
+    public function getcetakskp(){
+        $this->db->where('status', 'Diterima');
+        return $this->db->get('surat_keterangan_pengantar')->result();
+    }
+    public function getcetaksktm(){
+        $this->db->where('status', 'Diterima');
+        return $this->db->get('surat_tidak_mampu')->result();
+    }
     public function cetakSkk($id)
     {
         $this->db->where('surat_kematian.id', $id);

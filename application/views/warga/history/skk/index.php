@@ -1,6 +1,6 @@
             <div class="main-content container-fluid">
             	<div class="page-title">
-            		<h4>History Surat Keterangan Kematian</h4>
+            		<h4><?= $title ?></h4>
             	</div>
             	<section class="section">
             		<div class="row">

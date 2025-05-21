@@ -7,6 +7,7 @@ class SuratUsaha extends CI_Controller
 		is_login();
 		$this->load->model('Administrator/M_verifikasi');
 		$this->load->model('Administrator/M_qr');
+		$this->load->model('M_cetak');
 	}
 
 
@@ -17,6 +18,18 @@ class SuratUsaha extends CI_Controller
 			'datas'  => $this->M_verifikasi->getSku()
 		);
 
+		$this->load->view('layout/header', $data);
+		$this->load->view('layout/sidebar', $data);
+		$this->load->view('administrator/verifikasi/sku/surat_usaha', $data);
+		$this->load->view('layout/footer');
+	}
+
+	public function listcetak(){
+
+		$data = array(
+			'title' => 'Cetak Surat Usaha',
+			'datas' => $this->M_cetak->getcetaksku()
+		);
 		$this->load->view('layout/header', $data);
 		$this->load->view('layout/sidebar', $data);
 		$this->load->view('administrator/verifikasi/sku/surat_usaha', $data);

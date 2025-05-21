@@ -7,6 +7,7 @@ class SuratDomisili extends CI_Controller
 		is_login();
 		$this->load->model('Administrator/M_verifikasi');
 		$this->load->model('Administrator/M_qr');
+		$this->load->model('M_cetak');
 		date_default_timezone_set('Asia/Jakarta');
 	}
 
@@ -17,6 +18,18 @@ class SuratDomisili extends CI_Controller
 			'datas'  => $this->M_verifikasi->getSkd()
 		);
 
+		$this->load->view('layout/header', $data);
+		$this->load->view('layout/sidebar', $data);
+		$this->load->view('administrator/verifikasi/surat_domisili/surat_domisili', $data);
+		$this->load->view('layout/footer');
+	}
+
+	public function listcetak(){
+
+		$data = array(
+			'title' => 'Cetak Surat Domisili',
+			'datas' => $this->M_cetak->getcetakskd()
+		);
 		$this->load->view('layout/header', $data);
 		$this->load->view('layout/sidebar', $data);
 		$this->load->view('administrator/verifikasi/surat_domisili/surat_domisili', $data);

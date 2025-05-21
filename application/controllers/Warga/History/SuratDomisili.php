@@ -26,6 +26,18 @@ class SuratDomisili extends CI_Controller
         $this->load->view('layout/footer', $data);
     }
 
+    public function listcetak(){
+
+        $data = array(
+            'title' => 'Cetak Surat Domisili',
+            'datas' => $this->M_history->getlistcetakskd()
+        );
+        $this->load->view('layout/header', $data);
+        $this->load->view('layout/sidebar', $data);
+        $this->load->view('warga/history/skd/index', $data);
+        $this->load->view('layout/footer');
+    }
+
     public function cetak($id)
     {
         $data = array(

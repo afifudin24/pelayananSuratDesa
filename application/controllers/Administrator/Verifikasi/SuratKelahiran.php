@@ -5,6 +5,7 @@ class SuratKelahiran extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('Administrator/M_verifikasi');
+		$this->load->model('M_cetak');
 		$this->load->model('Administrator/M_qr');
 	}
 
@@ -16,6 +17,18 @@ class SuratKelahiran extends CI_Controller
 			'datas'  => $this->M_verifikasi->getSpak()
 		);
 
+		$this->load->view('layout/header', $data);
+		$this->load->view('layout/sidebar', $data);
+		$this->load->view('administrator/verifikasi/surat_kelahiran/surat_kelahiran', $data);
+		$this->load->view('layout/footer');
+	}
+
+	public function listcetak(){
+
+		$data = array(
+			'title' => 'Cetak Surat Kelahiran',
+			'datas' => $this->M_cetak->getcetakspak()
+		);
 		$this->load->view('layout/header', $data);
 		$this->load->view('layout/sidebar', $data);
 		$this->load->view('administrator/verifikasi/surat_kelahiran/surat_kelahiran', $data);

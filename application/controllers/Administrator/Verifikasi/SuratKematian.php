@@ -7,6 +7,7 @@ class SuratKematian extends CI_Controller
 		is_login();
 		$this->load->model('Administrator/M_verifikasi');
 		$this->load->model('Administrator/M_qr');
+		$this->load->model('M_cetak');
 	}
 
 
@@ -17,6 +18,17 @@ class SuratKematian extends CI_Controller
 			'datas'  => $this->M_verifikasi->getSkk()
 		);
 
+		$this->load->view('layout/header', $data);
+		$this->load->view('layout/sidebar', $data);
+		$this->load->view('administrator/verifikasi/skk/surat_kematian', $data);
+		$this->load->view('layout/footer');
+	}
+	public function listcetak(){
+
+		$data = array(
+			'title' => 'Cetak Surat Keterangan Kematian',
+			'datas' => $this->M_cetak->getcetakskk()
+		);
 		$this->load->view('layout/header', $data);
 		$this->load->view('layout/sidebar', $data);
 		$this->load->view('administrator/verifikasi/skk/surat_kematian', $data);
